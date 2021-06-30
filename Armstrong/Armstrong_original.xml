@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="Armstrong.java"><class><specifier>public</specifier> class <name>Armstrong</name> <block>{
+
+    <function><type><specifier>public</specifier> <specifier>static</specifier> <name>void</name></type> <name>main</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>args</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>low</name> <init>= <expr><literal type="number">999</literal></expr></init></decl>, <decl><type ref="prev"/><name>high</name> <init>= <expr><literal type="number">99999</literal></expr></init></decl>;</decl_stmt>
+
+        <for>for<control>(<init><decl><type><name>int</name></type> <name>number</name> <init>= <expr><name>low</name> <operator>+</operator> <literal type="number">1</literal></expr></init></decl>;</init> <condition><expr><name>number</name> <operator>&lt;</operator> <name>high</name></expr>;</condition> <incr><expr><operator>++</operator><name>number</name></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>digits</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>int</name></type> <name>result</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>int</name></type> <name>originalNumber</name> <init>= <expr><name>number</name></expr></init></decl>;</decl_stmt>
+
+            <comment type="line">// number of digits calculation</comment>
+            <while>while <condition>(<expr><name>originalNumber</name> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>originalNumber</name> <operator>/=</operator> <literal type="number">10</literal></expr>;</expr_stmt>
+                <expr_stmt><expr><operator>++</operator><name>digits</name></expr>;</expr_stmt>
+            </block_content>}</block></while>
+
+            <expr_stmt><expr><name>originalNumber</name> <operator>=</operator> <name>number</name></expr>;</expr_stmt>
+
+            <comment type="line">// result contains sum of nth power of its digits</comment>
+            <while>while <condition>(<expr><name>originalNumber</name> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>int</name></type> <name>remainder</name> <init>= <expr><name>originalNumber</name> <operator>%</operator> <literal type="number">10</literal></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><name>result</name> <operator>+=</operator> <call><name><name>Math</name><operator>.</operator><name>pow</name></name><argument_list>(<argument><expr><name>remainder</name></expr></argument>, <argument><expr><name>digits</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name>originalNumber</name> <operator>/=</operator> <literal type="number">10</literal></expr>;</expr_stmt>
+            </block_content>}</block></while>
+
+            <if_stmt><if>if <condition>(<expr><name>result</name> <operator>==</operator> <name>number</name></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><name>number</name> <operator>+</operator> <literal type="string">" "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+}</block></class></unit>

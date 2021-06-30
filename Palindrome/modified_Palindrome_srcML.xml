@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<unit revision="1.0.0" language="Java" filename="Palindrome.java" xmlns="http://www.srcML.org/srcML/src"><class><specifier>public</specifier> class <name>Palindrome</name> <block>{
+
+    <function><type><specifier>public</specifier> <specifier>static</specifier> <name>void</name></type> <name>main</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>args</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>num</name> <init>= <expr><literal type="number">121</literal></expr></init></decl>, <decl><type ref="prev"/><name>reversedInteger</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>, <decl><type ref="prev"/><name>remainder</name></decl>, <decl><type ref="prev"/><name>originalInteger</name></decl>;</decl_stmt><!--Last modified date: Sat Mar 27 21:32:54 GMT 2021--><expr_stmt><expr><name>originalInteger</name> <operator>=</operator> <name>num</name></expr>;</expr_stmt><expr_stmt xmlns=""><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">" originalInteger : "</literal><operator>+</operator><name>originalInteger</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        
+
+        <comment type="line">// reversed integer is stored in variable </comment>
+        <while>while<condition>( <expr><name>num</name> <operator>!=</operator> <literal type="number">0</literal></expr> )</condition>
+        <block>{<block_content><!--Last modified date: Sat Mar 27 21:32:54 GMT 2021--><expr_stmt><expr><name>remainder</name> <operator>=</operator> <name>num</name> <operator>%</operator> <literal type="number">10</literal></expr>;</expr_stmt><expr_stmt xmlns=""><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">" remainder : "</literal><operator>+</operator><name>remainder</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <!--Last modified date: Sat Mar 27 21:32:54 GMT 2021--><expr_stmt><expr><name>reversedInteger</name> <operator>=</operator> <name>reversedInteger</name> <operator>*</operator> <literal type="number">10</literal> <operator>+</operator> <name>remainder</name></expr>;</expr_stmt><expr_stmt xmlns=""><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">" reversedInteger : "</literal><operator>+</operator><name>reversedInteger</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            
+            <expr_stmt><expr><name>num</name>  <operator>/=</operator> <literal type="number">10</literal></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <comment type="line">// palindrome if orignalInteger and reversedInteger are equal</comment>
+        <if_stmt><if>if <condition>(<expr><name>originalInteger</name> <operator>==</operator> <name>reversedInteger</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>originalInteger</name> <operator>+</operator> <literal type="string">" is a palindrome."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>originalInteger</name> <operator>+</operator> <literal type="string">" is not a palindrome."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+}</block></class></unit>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<unit revision="1.0.0" language="Java" filename="Fibonacci.java" xmlns="http://www.srcML.org/srcML/src">
+  <class>
+    <specifier>public</specifier> class 
+    <name>Fibonacci</name>
+    <block>{ 
+      <function>
+        <type>
+          <specifier>public</specifier>
+          <specifier>static</specifier>
+          <name>void</name>
+        </type>
+        <name>main</name>
+        <parameter_list>(
+          <parameter>
+            <decl>
+              <type>
+                <name>
+                  <name>String</name>
+                  <index>[]</index>
+                </name>
+              </type>
+              <name>args</name>
+            </decl>
+          </parameter>)
+        </parameter_list>
+        <block>{
+          <block_content>
+            <decl_stmt>
+              <decl>
+                <type>
+                  <name>int</name>
+                </type>
+                <name>n</name>
+                <init>= 
+                  <expr>
+                    <literal type="number">10</literal>
+                  </expr>
+                </init>
+              </decl>, 
+              <decl>
+                <type ref="prev"/>
+                <name>t1</name>
+                <init>= 
+                  <expr>
+                    <literal type="number">0</literal>
+                  </expr>
+                </init>
+              </decl>, 
+              <decl>
+                <type ref="prev"/>
+                <name>t2</name>
+                <init>= 
+                  <expr>
+                    <literal type="number">1</literal>
+                  </expr>
+                </init>
+              </decl>;
+            </decl_stmt>
+            <for>for 
+              <control>(
+                <init>
+                  <decl>
+                    <type>
+                      <name>int</name>
+                    </type>
+                    <name>i</name>
+                    <init>= 
+                      <expr>
+                        <literal type="number">1</literal>
+                      </expr>
+                    </init>
+                  </decl>;
+                </init>
+                <condition>
+                  <expr>
+                    <name>i</name>
+                    <operator>&lt;=</operator>
+                    <name>n</name>
+                  </expr>;
+                </condition>
+                <incr>
+                  <expr>
+                    <operator>++</operator>
+                    <name>i</name>
+                  </expr>
+                </incr>)
+              </control>
+              <block>{
+                <block_content>
+                  <decl_stmt>
+                    <decl>
+                      <type>
+                        <name>int</name>
+                      </type>
+                      <name>sum</name>
+                      <init>= 
+                        <expr>
+                          <name>t1</name>
+                          <operator>+</operator>
+                          <name>t2</name>
+                        </expr>
+                      </init>
+                    </decl>;
+                  </decl_stmt>
+                  <!--Last modified date: Sat Mar 27 21:15:27 GMT 2021-->
+                  <expr_stmt>
+                    <expr>
+                      <name>t1</name>
+                      <operator>=</operator>
+                      <name>t2</name>
+                    </expr>;
+                  </expr_stmt>
+                  <expr_stmt xmlns="">
+                    <expr>
+                      <call>
+                        <name>
+                          <name>System</name>
+                          <operator>.</operator>
+                          <name>out</name>
+                          <operator>.</operator>
+                          <name>println</name>
+                        </name>
+                        <argument_list>(
+                          <argument>
+                            <expr>
+                              <literal type="string">" t1 : "</literal>
+                              <operator>+</operator>
+                              <name>t1</name>
+                            </expr>
+                          </argument>)
+                        </argument_list>
+                      </call>
+                    </expr>;
+                  </expr_stmt>
+                  <!--Last modified date: Sat Mar 27 21:15:27 GMT 2021-->
+                  <expr_stmt>
+                    <expr>
+                      <name>t2</name>
+                      <operator>=</operator>
+                      <name>sum</name>
+                    </expr>;
+                  </expr_stmt>
+                  <expr_stmt xmlns="">
+                    <expr>
+                      <call>
+                        <name>
+                          <name>System</name>
+                          <operator>.</operator>
+                          <name>out</name>
+                          <operator>.</operator>
+                          <name>println</name>
+                        </name>
+                        <argument_list>(
+                          <argument>
+                            <expr>
+                              <literal type="string">" t2 : "</literal>
+                              <operator>+</operator>
+                              <name>t2</name>
+                            </expr>
+                          </argument>)
+                        </argument_list>
+                      </call>
+                    </expr>;
+                  </expr_stmt> 
+                </block_content>}
+              </block>
+            </for>
+          </block_content>}
+        </block>
+      </function> }
+    </block>
+  </class>
+</unit>
